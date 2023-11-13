@@ -18,6 +18,7 @@ pipeline {
         stage('Terraform_AKS') {
             steps {
                 sh 'terraform init'
+                sh 'terraform fmt'
                 sh 'terraform apply --auto-approve'
             }
         }
